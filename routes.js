@@ -1,5 +1,6 @@
 const session = require("express-session");
 const bcrypt = require("bcrypt");
+const User = require("./user");
 const {
   sendUserError,
   hashedPassword,
