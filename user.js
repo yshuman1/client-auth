@@ -7,7 +7,7 @@ mongoose.models = {};
 mongoose.modelSchemas = {};
 
 mongoose.Promise = Promise;
-mongoose.connect("mongodb://localhost/users", { useMongoClient: true });
+mongoose.connect("mongodb://localhost/users");
 
 const UserSchema = new Schema({
   username: {

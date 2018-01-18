@@ -5,12 +5,12 @@ const {
   hashedPassword,
   loggedIn,
   restrictedPermissions
-} = require("middleWare");
+} = require("./middleWare");
 
 const jwt = require("jsonwebtoken");
 
 const routes = server => {
-  server.post("/log-in", (req, res) => {
+  server.post("/login", (req, res) => {
     const { username, password } = req.body;
     if (!username) {
       sendUserError("username undefined", res);
@@ -59,7 +59,7 @@ const routes = server => {
       return;
     }
     req.session.username = null;
-    res.json(req.session);
+    res.status(200).send("user is logged out");
   });
 
   server.get("/restricted/users", (req, res) => {
@@ -79,4 +79,4 @@ const routes = server => {
   });
 };
 
-modules.exports = routes;
+module.exports = routes;

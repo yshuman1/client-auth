@@ -7,9 +7,9 @@ const {
   hashedPassword,
   loggedIn,
   restrictedPermissions
-} = require("middleWare");
+} = require("./middleWare");
 const cors = require("cors");
-const routes = require("routes");
+const routes = require("./routes");
 
 const jwt = require("jsonwebtoken");
 
@@ -39,4 +39,4 @@ server.use(restrictedPermissions);
 
 routes(server);
 
-server.listen(3000);
+server.listen(5000);
